@@ -2,7 +2,7 @@
 using TBRPG.BackEnd.Leveling;
 using TBRPG.BackEnd.Player;
 
-public class MonsterStats : IStatModifier
+public class MonsterStats
 {
     private static int randomHealth,
         randomConsti,
@@ -107,13 +107,13 @@ public class MonsterStats : IStatModifier
         
         MonsterStats randMonster = new MonsterStats(
             randomSkillLevel, 
-            randomHealth, 
-            randomConsti, 
-            randomStreng, 
-            randomDext, 
-            randomIntelli, 
-            randomWisdom, 
-            randomSpeed);
+            (byte)randomHealth, 
+            (byte)randomConsti, 
+            (byte)randomStreng, 
+            (byte)randomDext, 
+            (byte)randomIntelli, 
+            (byte)randomWisdom, 
+            (byte)randomSpeed);
         
         return randMonster;
     }
@@ -129,7 +129,7 @@ public class MonsterStats : IStatModifier
     private int Spd { get; set; }
     #endregion
     
-    public MonsterStats(eLifeRank lifeRank, int health, int constitution, int strength, int dexterity, int intelligence, int wisdom, int speed) {
+    public MonsterStats(eLifeRank lifeRank, byte health, byte constitution, byte strength, byte dexterity, byte intelligence, byte wisdom, byte speed) {
         LifeRank = lifeRank;
         Hp = health;
         Con = constitution;
@@ -139,15 +139,5 @@ public class MonsterStats : IStatModifier
         Wis = wisdom;
         Spd = speed;
     }
-    
-    public int conMod() { return (int) (Con * 0.5); }
-
-    public int strMod() { return (int) (Str * 0.5); }
-
-    public int dexMod() { return (int) (Dex * 0.5); }
-
-    public int intelMod() { return (int) (Intel * 0.5); }
-
-    public int wisMod() { return (int) (Wis * 0.5); }
     
 }

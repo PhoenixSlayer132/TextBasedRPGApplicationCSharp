@@ -2,18 +2,18 @@
 
 namespace TBRPG.BackEnd.Player;
 
-public class PlayerStats : IStatModifier {
-    public int Hp { get; set; }
-    public int Con { get; set; }
-    public int Str { get; set; }
-    public int Dex { get; set; }
-    public int Intel { get; set; }
-    public int Wis { get; set; }
-    public int Spd { get; set; }
+public class PlayerStats {
+    public byte Hp { get; set; }
+    public byte Con { get; set; }
+    public byte Str { get; set; }
+    public byte Dex { get; set; }
+    public byte Intel { get; set; }
+    public byte Wis { get; set; }
+    public byte Spd { get; set; }
     
     
     
-    public PlayerStats(int health, int constitution, int strength, int dexterity, int intelligence, int wisdom, int speed) {
+    public PlayerStats(byte health, byte constitution, byte strength, byte dexterity, byte intelligence, byte wisdom, byte speed) {
         Hp = health;
         Con = constitution;
         Str = strength;
@@ -22,14 +22,4 @@ public class PlayerStats : IStatModifier {
         Wis = wisdom;
         Spd = speed;
     }
-
-    public int conMod() { return (int) (Con * 0.2); }
-
-    public int strMod() { return (int) (Str * 0.2); }
-
-    public int dexMod() { return (int) (Dex * 0.2); }
-
-    public int intelMod() { return (int) (Intel * 0.2); }
-
-    public int wisMod() { return (int) (Wis * 0.2); }
 }

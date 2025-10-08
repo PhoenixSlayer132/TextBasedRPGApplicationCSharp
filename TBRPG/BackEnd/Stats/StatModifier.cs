@@ -4,13 +4,23 @@ using TBRPG.BackEnd.Player;
 namespace TBRPG.BackEnd.Stats;
 
 public interface IStatModifier {
-    int conMod();
+    int conBoost();
 
-    int strMod();
+    int strBoost();
 
-    int dexMod();
+    int dexBoost();
 
-    int intelMod();
+    int intelBoost();
 
-    int wisMod();
+    int wisBoost();
+    
+    int conNerf();
+
+    int strNerf();
+
+    int dexNerf();
+
+    int intelNerf();
+
+    int wisNerf();
 }
