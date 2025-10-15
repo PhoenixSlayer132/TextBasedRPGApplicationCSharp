@@ -23,6 +23,8 @@ public class ProfessionMoves
         this.Power = Power;
         this.Description = Description;
         this.Enabled = Enabled;
+        
+        AllMoves.Add(this);
     }
 
     public ProfessionMoves(Player.Player.eProfession Profession, String Name, byte Power, byte Count, String Description, bool Enabled)
@@ -33,6 +35,9 @@ public class ProfessionMoves
         this.Count = Count;
         this.Description = Description;
         this.Enabled = Enabled;
+        
+        AllMoves.Add(this);
+
     }
     public ProfessionMoves(Player.Player.eProfession Profession, String Name, byte Power, String Description,  IStatModifier StatModifier1, IStatModifier StatModifier2, bool Enabled)
     {
@@ -43,6 +48,9 @@ public class ProfessionMoves
         this.StatModifier1 = StatModifier1;
         this.StatModifier2 = StatModifier2;
         this.Enabled = Enabled;
+        
+        AllMoves.Add(this);
+
     }
     public ProfessionMoves(Player.Player.eProfession Profession, String Name, byte Power, String Description, IStatModifier StatModifier1, bool Enabled)
     {
@@ -52,6 +60,9 @@ public class ProfessionMoves
         this.Description = Description;
         this.StatModifier1 = StatModifier1;
         this.Enabled = Enabled;
+        
+        AllMoves.Add(this);
+
     }
     public ProfessionMoves(Player.Player.eProfession Profession, String Name, String Description, IStatModifier StatModifier1, IStatModifier StatModifier2, bool Enabled)
     {
@@ -61,6 +72,10 @@ public class ProfessionMoves
         this.StatModifier1 = StatModifier1;
         this.StatModifier2 = StatModifier2;
         this.Enabled = Enabled;
+        
+        AllMoves.Add(this);
+
+        
     }
     public ProfessionMoves(Player.Player.eProfession Profession, String Name, String Description,  IStatModifier StatModifier1, bool Enabled)
     {
@@ -69,8 +84,51 @@ public class ProfessionMoves
         this.Description = Description;
         this.StatModifier1 = StatModifier1;
         this.Enabled = Enabled;
+        
+        AllMoves.Add(this);
+
     }
 
+    public void enableMove(ProfessionMoves professionMoves)
+    {
+        professionMoves.Enabled = true;
+        AllEnabledMoves.Add(professionMoves);
+    }
+
+    public static void enableMoves(Player.Player.eProfession profession)
+    {
+        AllMoves.ForEach(Move =>
+        {
+            if (Move.Profession.Equals(profession))
+            {
+                Move.Enabled = true;
+                AllEnabledMoves.Add(Move);
+            }
+            else
+            {
+                Move.Enabled = false;
+                AllEnabledMoves.Remove(Move);
+            }
+        } );
+    }
+
+    public void disableMove(ProfessionMoves professionMoves)
+    {
+        professionMoves.Enabled = false;
+        AllEnabledMoves.Remove(professionMoves);
+    }
+
+    public static void disableMoves(Player.Player.eProfession profession)
+    {
+        AllEnabledMoves.ForEach(Move =>
+        {
+            if (!Move.Profession.Equals(profession))
+            {
+                Move.Enabled = false;
+                AllEnabledMoves.Remove(Move);
+            }
+        } );
+    }
     public void createMoves()
     {
         switch (Profession)

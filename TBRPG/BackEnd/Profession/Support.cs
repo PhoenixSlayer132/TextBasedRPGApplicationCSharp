@@ -11,6 +11,6 @@ public class Support {
     
     public void DirtyAllEnabledMoves()
     {
-        ProfessionMoves.AllEnabledMoves = ProfessionMoves.AllMoves.Where(a => a.Enabled.Equals(true)).ToList();
+        ProfessionMoves.enableMoves(Player.Player.player.Profession);
     }
 }

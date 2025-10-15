@@ -13,6 +13,7 @@ public class Player {
     }
     public PlayerLevel Level { get; set; }
     public PlayerStats Stats { get; set; }
+    public eProfession Profession { get; set; }
     public string Name { get; set; }
     public static Player player = null!;
     
