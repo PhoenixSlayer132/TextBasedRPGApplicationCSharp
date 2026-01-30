@@ -1,8 +1,10 @@
-﻿namespace TBRPG.BackEnd.Stats;
+﻿using TBRPG.BackEnd.CharacterFolder;
+using TBRPG.BackEnd.CharacterFolder.PlayerFolder;
 using TBRPG.BackEnd.Leveling;
-using TBRPG.BackEnd.Player;
 
-public class MonsterStats
+namespace TBRPG.BackEnd.Stats;
+
+public class MonsterStats : CharacterStats
 {
     private static int randomHealth,
         randomConsti,
@@ -118,20 +120,12 @@ public class MonsterStats
         return randMonster;
     }
     
-    #region enum
-    private eLifeRank LifeRank { get; set; }
-    private int Hp { get; set; }
-    private int Con { get; set; }
-    private int Str { get; set; }
-    private int Dex { get; set; }
-    private int Intel { get; set; }
-    private int Wis { get; set; }
-    private int Spd { get; set; }
-    #endregion
+    public eLifeRank LifeRank { get; set; }
     
     public MonsterStats(eLifeRank lifeRank, byte health, byte constitution, byte strength, byte dexterity, byte intelligence, byte wisdom, byte speed) {
         LifeRank = lifeRank;
         Hp = health;
+        CurrentHp = Hp;
         Con = constitution;
         Str = strength;
         Dex = dexterity;

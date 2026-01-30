@@ -1,6 +1,6 @@
 ﻿using TBRPG.BackEnd.Stats;
 
-namespace TBRPG.BackEnd.Monsters;
+namespace TBRPG.BackEnd.CharacterFolder.Monsters;
 
 public class MiniBosses(string name, byte level, MonsterStats stats, MonsterType type)
-    : Monsters(name, level, type, stats);
+    : Monster(name, level, type, stats);

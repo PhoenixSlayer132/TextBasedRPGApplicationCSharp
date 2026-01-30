@@ -1,9 +1,8 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using System.IO;
-
-namespace TBRPG.BackEnd.Monsters;
+﻿namespace TBRPG.BackEnd.CharacterFolder.Monsters;
 
 public class MonsterType {
+    public eMonsterType Type { get; set; }
+    public eElement Element { get; set; }
     
     public static MonsterType randomizedTypes() {
         Random random = new Random();
@@ -74,8 +73,53 @@ public class MonsterType {
         Draconic,
         Abomination
     }
-    public MonsterType(eMonsterType type, eElement element) {
-        
+
+    public static List<string> HumanoidNames = new List<string>
+    {
+        "Carl",
+        "Orc",
+        "Goblin"
+    };
+    public static List<string> FeralNames = new List<string>
+    {
+        "Wolf",
+        "Chicken",
+        "Vulture"
+    };
+    public static List<string> ElementalNames = new List<string>
+    {
+        $"Elemental"
+    };
+    public static List<string> FloraNames = new List<string>
+    {
+        "Rose",
+        "Thorn",
+        "Blossom",
+        "Blade"
+    };
+    public static List<string> UndeadNames = new List<string>
+    {
+        "Skeleton",
+        "Lich",
+        "Zombie"
+    };
+    public static List<string> DraconicNames = new List<string>
+    {
+        "Dragon",
+        "Wyvern",
+        "Drake"
+    };
+    public static List<string> AbominationNames = new List<string>
+    {
+        "Griffin",
+        "Homunculus",
+        "Experiment"
+    };
+    
+    public MonsterType(eMonsterType type, eElement element)
+    {
+        Type = type;
+        Element = element;
     }
     public enum eElement {
         Fire,

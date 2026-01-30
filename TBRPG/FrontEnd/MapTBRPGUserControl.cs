@@ -16,10 +16,6 @@ public partial class MapTBRPGUserControl : UserControl
     }
     private void MapUserControl_Paint(object sender, PaintEventArgs pe)
     {
-        Pen pen = new Pen(Color.White, 3);
-        var graphics = CreateGraphics();
-        
-        graphics.DrawLine(pen, 50, 70, 160, 220);
         
     }
     

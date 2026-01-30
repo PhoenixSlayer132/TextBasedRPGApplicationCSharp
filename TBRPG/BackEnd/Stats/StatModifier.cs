@@ -1,7 +1,4 @@
-﻿using TBRPG.BackEnd.Monsters;
-using TBRPG.BackEnd.Player;
-
-namespace TBRPG.BackEnd.Stats;
+﻿namespace TBRPG.BackEnd.Stats;
 
 public interface IStatModifier {
     int conBoost();

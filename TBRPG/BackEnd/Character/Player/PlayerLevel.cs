@@ -3,8 +3,8 @@
 public class PlayerLevel
 {
     public byte Level { get; set;}
-    public float Experience { get; set;}
-    public eLifeRank LifeRank { get; set;}
+    private float Experience { get; set;}
+    public eLifeRank LifeRank { get; private set;}
     public enum eLifeRank {
         Tutorial,
         NewBlood,
@@ -17,6 +17,7 @@ public class PlayerLevel
         Lord,
         HighLord
     }
+    
     public PlayerLevel(byte level, float experience, eLifeRank lifeRank) {
         Level = level;
         Experience = experience;

@@ -1,7 +1,6 @@
 using TBRPG.FrontEnd;
 using TBRPG.BackEnd;
 using TBRPG.BackEnd.Leveling;
-using TBRPG.BackEnd.Player;
 
 namespace TBRPG;
 

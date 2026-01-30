@@ -35,7 +35,6 @@ partial class MainTBRPGUserControl
         txtbxInputBox = new System.Windows.Forms.TextBox();
         lblPlayerName = new System.Windows.Forms.Label();
         pnlPlayerStats = new System.Windows.Forms.Panel();
-        btnMap = new System.Windows.Forms.Button();
         rchtxtbxMainOutPut = new System.Windows.Forms.RichTextBox();
         pnlPlayerStats.SuspendLayout();
         SuspendLayout();
@@ -78,27 +77,11 @@ partial class MainTBRPGUserControl
         // pnlPlayerStats
         // 
         pnlPlayerStats.BackColor = System.Drawing.Color.FromArgb(((int)((byte)64)), ((int)((byte)64)), ((int)((byte)64)));
-        pnlPlayerStats.Controls.Add(btnMap);
         pnlPlayerStats.Controls.Add(lblPlayerName);
         pnlPlayerStats.Location = new System.Drawing.Point(48, 512);
         pnlPlayerStats.Name = "pnlPlayerStats";
         pnlPlayerStats.Size = new System.Drawing.Size(982, 84);
         pnlPlayerStats.TabIndex = 4;
-        // 
-        // btnMap
-        // 
-        btnMap.BackColor = System.Drawing.Color.Transparent;
-        btnMap.BackgroundImage = ((System.Drawing.Image)resources.GetObject("btnMap.BackgroundImage"));
-        btnMap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-        btnMap.Font = new System.Drawing.Font("Monocraft", 9.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
-        btnMap.ForeColor = System.Drawing.Color.Transparent;
-        btnMap.Location = new System.Drawing.Point(909, 9);
-        btnMap.Name = "btnMap";
-        btnMap.Size = new System.Drawing.Size(64, 64);
-        btnMap.TabIndex = 4;
-        btnMap.Text = "Map";
-        btnMap.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-        btnMap.UseVisualStyleBackColor = false;
         // 
         // rchtxtbxMainOutPut
         // 
@@ -117,8 +100,8 @@ partial class MainTBRPGUserControl
         // 
         // MainTBRPGUserControl
         // 
-        // AutoScaleDimensions = new System.Drawing.SizeF(16.5F, 34.5F);
-        // AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+        AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+        //AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         BackColor = System.Drawing.Color.Black;
         Controls.Add(rchtxtbxMainOutPut);
         Controls.Add(pnlPlayerStats);
@@ -126,7 +109,7 @@ partial class MainTBRPGUserControl
         Controls.Add(btnEnter);
         Font = new System.Drawing.Font("Monocraft", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
         Location = new System.Drawing.Point(22, 22);
-        Margin = new System.Windows.Forms.Padding(0, 0, 2, 2);
+        Margin = new System.Windows.Forms.Padding(0);
         Size = new System.Drawing.Size(1074, 712);
         Load += MainTBRPGUserControl_Load;
         KeyPress += rchtxtbxMainOutPut_OnKeyPress;
@@ -135,15 +118,14 @@ partial class MainTBRPGUserControl
         PerformLayout();
     }
 
-    private System.Windows.Forms.Button btnMap;
 
-    private System.Windows.Forms.RichTextBox rchtxtbxMainOutPut;
+    public static System.Windows.Forms.RichTextBox rchtxtbxMainOutPut;
 
     private System.Windows.Forms.Panel pnlPlayerStats;
 
     private System.Windows.Forms.Label lblPlayerName;
 
-    private System.Windows.Forms.TextBox txtbxInputBox;
+    public static System.Windows.Forms.TextBox txtbxInputBox;
 
     private System.Windows.Forms.Button btnEnter;
 

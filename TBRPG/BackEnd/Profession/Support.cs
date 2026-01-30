@@ -1,4 +1,7 @@
-﻿namespace TBRPG.BackEnd.Profession;
+﻿using TBRPG.BackEnd.CharacterFolder.PlayerFolder;
+using TBRPG.BackEnd.Profession.Moves;
+
+namespace TBRPG.BackEnd.Profession;
 
 public class Support {
     public void getProfession() {
@@ -11,6 +14,6 @@ public class Support {
     
     public void DirtyAllEnabledMoves()
     {
-        ProfessionMoves.enableMoves(Player.Player.player.Profession);
+        ProfessionMoves.enableMoves(Player.player.Profession);
     }
 }

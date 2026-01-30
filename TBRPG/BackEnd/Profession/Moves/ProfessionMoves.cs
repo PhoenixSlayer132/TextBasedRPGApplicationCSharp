@@ -1,9 +1,11 @@
-﻿using TBRPG.BackEnd.Stats;
-namespace TBRPG.BackEnd.Profession;
+﻿using TBRPG.BackEnd.CharacterFolder.PlayerFolder;
+using TBRPG.BackEnd.Stats;
+
+namespace TBRPG.BackEnd.Profession.Moves;
 
 public class ProfessionMoves
 {
-    private Player.Player.eProfession Profession { get; set; }
+    private Player.eProfession Profession { get; set; }
     private String Name;
     private byte Power;
     private byte Count;
@@ -16,7 +18,7 @@ public class ProfessionMoves
 
     
     
-    public ProfessionMoves(Player.Player.eProfession Profession, String Name, byte Power, String Description, bool Enabled)
+    public ProfessionMoves(Player.eProfession Profession, String Name, byte Power, String Description, bool Enabled)
     {
         this.Profession = Profession;
         this.Name = Name;
@@ -27,7 +29,7 @@ public class ProfessionMoves
         AllMoves.Add(this);
     }
 
-    public ProfessionMoves(Player.Player.eProfession Profession, String Name, byte Power, byte Count, String Description, bool Enabled)
+    public ProfessionMoves(Player.eProfession Profession, String Name, byte Power, byte Count, String Description, bool Enabled)
     {
         this.Profession = Profession;
         this.Name = Name;
@@ -39,7 +41,7 @@ public class ProfessionMoves
         AllMoves.Add(this);
 
     }
-    public ProfessionMoves(Player.Player.eProfession Profession, String Name, byte Power, String Description,  IStatModifier StatModifier1, IStatModifier StatModifier2, bool Enabled)
+    public ProfessionMoves(Player.eProfession Profession, String Name, byte Power, String Description,  IStatModifier StatModifier1, IStatModifier StatModifier2, bool Enabled)
     {
         this.Profession = Profession;
         this.Name = Name;
@@ -52,7 +54,7 @@ public class ProfessionMoves
         AllMoves.Add(this);
 
     }
-    public ProfessionMoves(Player.Player.eProfession Profession, String Name, byte Power, String Description, IStatModifier StatModifier1, bool Enabled)
+    public ProfessionMoves(Player.eProfession Profession, String Name, byte Power, String Description, IStatModifier StatModifier1, bool Enabled)
     {
         this.Profession = Profession;
         this.Name = Name;
@@ -64,7 +66,7 @@ public class ProfessionMoves
         AllMoves.Add(this);
 
     }
-    public ProfessionMoves(Player.Player.eProfession Profession, String Name, String Description, IStatModifier StatModifier1, IStatModifier StatModifier2, bool Enabled)
+    public ProfessionMoves(Player.eProfession Profession, String Name, String Description, IStatModifier StatModifier1, IStatModifier StatModifier2, bool Enabled)
     {
         this.Profession = Profession;
         this.Name = Name;
@@ -77,7 +79,7 @@ public class ProfessionMoves
 
         
     }
-    public ProfessionMoves(Player.Player.eProfession Profession, String Name, String Description,  IStatModifier StatModifier1, bool Enabled)
+    public ProfessionMoves(Player.eProfession Profession, String Name, String Description,  IStatModifier StatModifier1, bool Enabled)
     {
         this.Profession = Profession;
         this.Name = Name;
@@ -95,7 +97,7 @@ public class ProfessionMoves
         AllEnabledMoves.Add(professionMoves);
     }
 
-    public static void enableMoves(Player.Player.eProfession profession)
+    public static void enableMoves(Player.eProfession profession)
     {
         AllMoves.ForEach(Move =>
         {
@@ -118,7 +120,7 @@ public class ProfessionMoves
         AllEnabledMoves.Remove(professionMoves);
     }
 
-    public static void disableMoves(Player.Player.eProfession profession)
+    public static void disableMoves(Player.eProfession profession)
     {
         AllEnabledMoves.ForEach(Move =>
         {
@@ -133,29 +135,29 @@ public class ProfessionMoves
     {
         switch (Profession)
         {
-            case Player.Player.eProfession.Archer:
+            case Player.eProfession.Archer:
             {
-                ProfessionMoves TestMove = new ProfessionMoves(Player.Player.eProfession.Archer,"Test Move", Player.Player.player.Stats.Wis, "Test", true);
+                ProfessionMoves TestMove = new ProfessionMoves(Player.eProfession.Archer,"Test Move", Player.player.Wis, "Test", true);
                 
-                ProfessionMoves BurstFire = new ProfessionMoves(Player.Player.eProfession.Archer,"Burst Fire", Player.Player.player.Stats.Str, 3,
+                ProfessionMoves BurstFire = new ProfessionMoves(Player.eProfession.Archer,"Burst Fire", Player.player.Str, 3,
                     "The User Burst Fires their bow shooting 3 times in one turn.", false);
                 break;
             }
-            case Player.Player.eProfession.Berserker:
+            case Player.eProfession.Berserker:
             {
-                ProfessionMoves TestMove = new ProfessionMoves(Player.Player.eProfession.Berserker,"Test Move", Player.Player.player.Stats.Wis, "Test", true);
+                ProfessionMoves TestMove = new ProfessionMoves(Player.eProfession.Berserker,"Test Move", Player.player.Wis, "Test", true);
                 
                 break;
             }
-            case Player.Player.eProfession.Mage:
+            case Player.eProfession.Mage:
             {
-                ProfessionMoves TestMove = new ProfessionMoves(Player.Player.eProfession.Mage,"Test Move", Player.Player.player.Stats.Wis, "Test", true);
+                ProfessionMoves TestMove = new ProfessionMoves(Player.eProfession.Mage,"Test Move", Player.player.Wis, "Test", true);
                 
                 break;
             }
-            case Player.Player.eProfession.Support:
+            case Player.eProfession.Support:
             {
-                ProfessionMoves TestMove = new ProfessionMoves(Player.Player.eProfession.Support,"Test Move", Player.Player.player.Stats.Wis, "Test", true);
+                ProfessionMoves TestMove = new ProfessionMoves(Player.eProfession.Support,"Test Move", Player.player.Wis, "Test", true);
                 
                 break;
             }

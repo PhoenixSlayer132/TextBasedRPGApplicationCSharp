@@ -1,0 +1,7 @@
+﻿Status Effects
+(Mini)Bosses
+Random Monster Storylines
+Rework Player Attacking
+Rework Monster Attacking
+Rework Stats (Player Class & Monster Type)
+Add CharacterLevel Class to allow a MonsterLevel Class to mimic PlayerLevel Class
